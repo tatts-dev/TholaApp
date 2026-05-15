@@ -1,0 +1,126 @@
+const prisma = require('../config/db');
+
+// @desc    Register a new vendor business
+// @route   POST /vendors/register-business
+// @access  Private (Vendor only)
+const registerBusiness = async (req, res, next) => {
+  try {
+    const {
+      business_name,
+      business_description,
+      category,
+      phone_number,
+      township,
+      address,
+      latitude,
+      longitude,
+      logo_url,
+    } = req.body;
+
+    const vendorExists = await prisma.vendor.findUnique({
+      where: { user_id: req.user.id },
+    });
+
+    if (vendorExists) {
+      res.status(400);
+      throw new Error('Business already registered for this user');
+    }
+
+    const vendor = await prisma.vendor.create({
+      data: {
+        user_id: req.user.id,
+        business_name,
+        business_description,
+        category,
+        phone_number,
+        township,
+        address,
+        latitude: parseFloat(latitude),
+        longitude: parseFloat(longitude),
+        logo_url,
+      },
+    });
+
+    res.status(201).json(vendor);
+  } catch (error) {
+    next(error);
+  }
+};
+
+// @desc    Get all vendors (for map)
+// @route   GET /vendors
+// @access  Public
+const getVendors = async (req, res, next) => {
+  try {
+    const vendors = await prisma.vendor.findMany({
+      include: {
+        user: {
+          select: { full_name: true, email: true },
+        },
+      },
+    });
+    res.status(200).json(vendors);
+  } catch (error) {
+    next(error);
+  }
+};
+
+// @desc    Get vendor by ID
+// @route   GET /vendors/:id
+// @access  Public
+const getVendorById = async (req, res, next) => {
+  try {
+    const vendor = await prisma.vendor.findUnique({
+      where: { id: req.params.id },
+      include: {
+        products: true,
+      },
+    });
+
+    if (!vendor) {
+      res.status(404);
+      throw new Error('Vendor not found');
+    }
+
+    res.status(200).json(vendor);
+  } catch (error) {
+    next(error);
+  }
+};
+
+// @desc    Update vendor profile
+// @route   PUT /vendors/:id
+// @access  Private (Vendor only)
+const updateVendor = async (req, res, next) => {
+  try {
+    const vendor = await prisma.vendor.findUnique({
+      where: { id: req.params.id },
+    });
+
+    if (!vendor) {
+      res.status(404);
+      throw new Error('Vendor not found');
+    }
+
+    if (vendor.user_id !== req.user.id) {
+      res.status(401);
+      throw new Error('User not authorized to update this business');
+    }
+
+    const updatedVendor = await prisma.vendor.update({
+      where: { id: req.params.id },
+      data: req.body,
+    });
+
+    res.status(200).json(updatedVendor);
+  } catch (error) {
+    next(error);
+  }
+};
+
+module.exports = {
+  registerBusiness,
+  getVendors,
+  getVendorById,
+  updateVendor,
+};
