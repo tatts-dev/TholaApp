@@ -2,7 +2,7 @@
 
 Thola is a mobile-first, full-stack township commerce platform designed to connect users with local vendors. It features robust role-based authentication, a map interface for discovering local vendors, product catalog management, and seamless integration for vendor KYC.
 
-## 🚀 Tech Stack
+## Tech Stack
 
 ### Frontend (Mobile App)
 - **Framework**: React Native with [Expo](https://expo.dev/) (Expo Router for navigation)
@@ -19,7 +19,7 @@ Thola is a mobile-first, full-stack township commerce platform designed to conne
 - **File Handling**: Multer
 - **Validation**: express-validator
 
-## 📂 Project Structure
+## Project Structure
 
 ```text
 TholaaAppv1/
@@ -36,11 +36,11 @@ TholaaAppv1/
 └── README.md             # This file
 ```
 
-## 🛠️ Getting Started
+## Getting Started
 
 ### Prerequisites
 - Node.js (v18 or newer recommended)
-- PostgreSQL (or your configured database for Prisma)
+- PostgreSQL on Supabase (or your configured database for Prisma)
 - Expo Go app on your physical device (or an iOS/Android emulator)
 
 ### Backend Setup
@@ -57,5 +57,5 @@ TholaaAppv1/
 4. Start the Expo development server: `npm start`
 5. Scan the QR code with the Expo Go app on your phone, or press `i` / `a` to open in an emulator.
 
-## 🏷️ Versioning
+## Versioning
 This repository is marked as **V1**. You can return to this clean state at any time by checking out the `v1.0.0` tag in Git.
