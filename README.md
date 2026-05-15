@@ -1,3 +1,4 @@
+<img width="575" height="442" alt="Screenshot 2026-05-15 141345" src="https://github.com/user-attachments/assets/ffcd1eec-d49a-429a-8ea5-79447dcd8759" />
 # Thola Marketplace App (V1)
 
 Thola is a mobile-first, full-stack township commerce platform designed to connect users with local vendors. It features robust role-based authentication, a map interface for discovering local vendors, product catalog management, and seamless integration for vendor KYC.
