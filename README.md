@@ -9,42 +9,24 @@ Thola is a mobile-first, full-stack township commerce platform designed to conne
 ## Tech Stack
 
 ### Frontend (Mobile App)
-- **Framework**: React Native with [Expo](https://expo.dev/) (Expo Router for navigation)
+- **Framework**: React Native with Expo
 - **UI & Styling**: React Native Paper
 - **State Management**: Zustand
 - **Forms & Validation**: React Hook Form
 - **Maps**: React Native Maps
-- **Hardware Integration**: Expo Camera, Expo Location, Expo Image Picker
 
-### Backend (REST API)
+### Backend 
 - **Server**: Node.js with Express.js
 - **Database ORM**: Prisma
 - **Authentication**: JWT (JSON Web Tokens) & bcrypt
 - **File Handling**: Multer
 - **Validation**: express-validator
 
-## Project Structure
-
-```text
-TholaaAppv1/
-├── frontend/             # Expo React Native App
-│   ├── src/              # Application source code
-│   ├── assets/           # Static assets (images, fonts)
-│   ├── app.config.js     # Expo configuration
-│   └── package.json      # Frontend dependencies
-├── backend/              # Express API Server
-│   ├── src/              # Server source code (controllers, routes, etc.)
-│   ├── prisma/           # Prisma schema and migrations
-│   └── package.json      # Backend dependencies
-├── .gitignore            # Root gitignore
-└── README.md             # This file
-```
-
 ## Getting Started
 
 ### Prerequisites
 - Node.js (v18 or newer recommended)
-- PostgreSQL on Supabase (or your configured database for Prisma)
+- PostgreSQL on Supabase (Configured database for Prisma)
 - Expo Go app on your physical device (or an iOS/Android emulator)
 
 ### Backend Setup
