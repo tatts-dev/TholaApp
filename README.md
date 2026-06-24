@@ -4,7 +4,7 @@
 
 # Thola App (V1)
 
-Developed at the ITWEB Security Summit hackathon 2026 in Johannesburg by Geeklucha
+Developed at the ITWEB Security Summit hackathon 2026 in Johannesburg hosted by Geekluch.
 Thola is a mobile-first platform designed to connect users with local vendors. It features robust role-based authentication, a map interface for discovering local vendors, product catalog management, and seamless integration for vendor KYC.
 
 ## The stack we used to developed Thola.
