@@ -42,4 +42,5 @@ Thola is a mobile-first platform designed to connect users with local vendors. I
 5. Scan the QR code with the Expo Go app on your phone, or press `i` / `a` to open in an emulator.
 
 Feature & Presented at the ITWEB Security Summit hackathon 2026 
+
 Developed by Thato Mashifana | Blessing Maleka | Kevin Nkadimeng | Thabiso Mashifana.
